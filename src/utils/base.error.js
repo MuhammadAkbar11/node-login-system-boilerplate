@@ -33,4 +33,19 @@ class BaseError extends Error {
   }
 }
 
+export class TransfromError extends BaseError {
+  constructor(err) {
+    super(err?.name, err?.statusCode, err?.message, err?.errors);
+
+    Object.keys(this.errors).map(x => {
+      this[x] = this.errors[x];
+    });
+    Object.keys(err).map(x => {
+      this[x] = err[x];
+    });
+
+    delete this.errors;
+  }
+}
+
 export default BaseError;
