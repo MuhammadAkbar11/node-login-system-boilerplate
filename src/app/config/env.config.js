@@ -10,7 +10,7 @@ const PRODUCTION_ENV = path.resolve(__dirname, ".env");
 
 const DEV_MODE = "development";
 
-export const dotenvConfig = dotenv.config({
+export const init = dotenv.config({
   path: MODE == DEV_MODE ? DEV_ENV : PRODUCTION_ENV,
 });
 

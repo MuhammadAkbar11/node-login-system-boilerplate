@@ -1,4 +1,4 @@
-export const getDummy = (req, res) => {
+export function getDummyHandler(req, res) {
   const data = [...Array(10).keys()].map(i => {
     let item = i + 1;
     return {
@@ -10,11 +10,11 @@ export const getDummy = (req, res) => {
   res.json({
     dummies: data,
   });
-};
+}
 
-export const postDummy = (req, res) => {
+export function postDummyHandler(req, res) {
   res.json({
     message: "Thanks for you request",
     data: req.body,
   });
-};
+}

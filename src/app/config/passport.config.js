@@ -1,5 +1,5 @@
 import passport from "passport";
-import BaseError from "../helpers/baseError.helper.js";
+import BaseError from "../../errors/base.error.js";
 import UserModel from "../models/User.model.js";
 import GoogleStrategy from "./strategies/google.strategy.js";
 import LocalStrategy from "./strategies/local.strategy.js";
@@ -24,6 +24,7 @@ export default function () {
         true,
         { ...err }
       );
+
       done(error, user);
     }
   });

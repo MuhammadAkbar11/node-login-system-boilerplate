@@ -7,7 +7,7 @@ import {
   postLogout,
   postSignUp,
 } from "../controllers/auth.controller.js";
-import { userValidate } from "../helpers/validation.helper.js";
+import { userValidate } from "../../helpers/validation.helper.js";
 import { ensureGuest } from "../middleware/auth.js";
 import {
   passportAuthGoogleLogin,
