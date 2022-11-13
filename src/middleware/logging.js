@@ -6,11 +6,11 @@ const textWhite = chalk.hex("#DFDFDE");
 const bgWhite = chalk.bgHex("#DFDFDE");
 
 const httpMethodColors = {
-  GET: value => bgWhite(chalk.black(`[${value}]`)),
-  POST: value => chalk.bgGreen(chalk.black(`[${value}]`)),
-  PUT: value => chalk.bgCyan(chalk.black(`[${value}]`)),
-  DELETE: value => chalk.bgRed(chalk.black(`[${value}]`)),
-  DEFAULT: value => chalk.bgCyan(chalk.black(`[${value}]`)),
+  GET: value => bgWhite(chalk.bold(chalk.black(`[${value}]`))),
+  POST: value => chalk.bgGreen(chalk.bold(chalk.black(`[${value}]`))),
+  PUT: value => chalk.bgCyan(chalk.bold(chalk.black(`[${value}]`))),
+  DELETE: value => chalk.bgRed(chalk.bold(chalk.black(`[${value}]`))),
+  DEFAULT: value => chalk.bgCyan(chalk.bold(chalk.black(`[${value}]`))),
 };
 
 const log = pinoHtpp({
