@@ -7,14 +7,14 @@ import passport from "passport";
 import methodOverride from "method-override";
 import connectFlash from "connect-flash";
 import { STATIC_FOLDER } from "../constants/path.constants.js";
-import passportConfig from "./config/passport.config.js";
-import DBConnection from "./config/db.config.js";
+import passportConfig from "../config/passport.config.js";
+import DBConnection from "../config/db.config.js";
 import MainRoutes from "./routes.js";
 import {
   logErrorMiddleware,
   return404,
   returnError,
-} from "./middleware/errorHandler.js";
+} from "../middleware/errorHandler.js";
 
 function AppServer(env) {
   passportConfig();

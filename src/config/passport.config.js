@@ -1,6 +1,6 @@
 import passport from "passport";
-import BaseError from "../../errors/base.error.js";
-import UserModel from "../models/User.model.js";
+import UserModel from "../app/models/User.model.js";
+import BaseError from "../errors/base.error.js";
 import GoogleStrategy from "./strategies/google.strategy.js";
 import LocalStrategy from "./strategies/local.strategy.js";
 

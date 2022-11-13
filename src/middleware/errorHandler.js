@@ -1,7 +1,7 @@
 import chalk from "chalk";
-import HTTP_STATUS from "../../constants/httpStatusCodes.constants.js";
-import BaseError from "../../errors/base.error.js";
-import Logger from "../../utils/logger.util.js";
+import HTTP_STATUS from "../constants/httpStatusCodes.constants.js";
+import BaseError from "../errors/base.error.js";
+import Logger from "../utils/logger.util.js";
 import { MODE } from "../config/env.config.js";
 
 const errorText = chalk.hex("#DA1212");

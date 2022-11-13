@@ -1,7 +1,9 @@
 import chalk from "chalk";
 import mongoose from "mongoose";
-import Logger from "../../utils/logger.util.js";
+import Logger from "../utils/logger.util.js";
 import { MONGO_URI } from "./env.config.js";
+
+Logger;
 
 const DBConnection = async () => {
   try {

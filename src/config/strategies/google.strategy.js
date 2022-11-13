@@ -1,6 +1,6 @@
 import { Strategy } from "passport-google-oauth20";
-import BaseError from "../../../errors/base.error.js";
-import UserModel from "../../models/User.model.js";
+import UserModel from "../../app/models/User.model.js";
+import BaseError from "../../errors/base.error.js";
 import { OAUTH_CLIENTID, OAUTH_CLIENT_SECRET } from "../env.config.js";
 
 const GoogleStrategy = new Strategy(
