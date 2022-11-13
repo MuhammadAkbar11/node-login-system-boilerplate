@@ -1,5 +1,4 @@
 import express from "express";
-import morgan from "morgan";
 import cors from "cors";
 import MongoStore from "connect-mongo";
 import session from "express-session";
@@ -15,6 +14,7 @@ import {
   return404,
   returnError,
 } from "../middleware/errorHandler.js";
+import pinoHttpLogger from "../middleware/logging.js";
 
 function AppServer(env) {
   passportConfig();
@@ -62,9 +62,7 @@ function AppServer(env) {
     })
   );
 
-  if (env.MODE == "development") {
-    app.use(morgan("dev"));
-  }
+  app.use(pinoHttpLogger);
 
   // Passport middleware
   app.use(passport.initialize());
