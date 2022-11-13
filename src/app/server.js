@@ -6,7 +6,7 @@ import session from "express-session";
 import passport from "passport";
 import methodOverride from "method-override";
 import connectFlash from "connect-flash";
-import { STATIC_FOLDER } from "../constants/path.constants.js";
+import { ROOT_FOLDER, STATIC_FOLDER } from "../constants/path.constants.js";
 import passportConfig from "../config/passport.config.js";
 import DBConnection from "../config/db.config.js";
 import MainRoutes from "./routes.js";
@@ -28,7 +28,7 @@ function AppServer(env) {
   });
 
   app.set("view engine", "ejs");
-  app.set("views", "src/app/views");
+  app.set("views", [ROOT_FOLDER + "/src/app"]);
 
   // Body Parse
   app.use(express.urlencoded({ extended: false }));
