@@ -3,5 +3,4 @@ import path from "path";
 const __dirname = path.resolve();
 
 export const STATIC_FOLDER = path.join(__dirname, "public");
-
-console.log(STATIC_FOLDER);
+export const ROOT_FOLDER = __dirname;
