@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import HTTP_STATUS from "../constants/httpStatusCodes.constants.js";
-import BaseError from "../errors/base.error.js";
+import BaseError, { TransfromError } from "../utils/base.error.js";
 import Logger from "../utils/logger.util.js";
 import { MODE } from "../config/env.config.js";
 
@@ -18,11 +18,12 @@ function logErrorMiddleware(err, req, res, next) {
 }
 
 function return404(req, res, next) {
-  const error = BaseError.toBaseError(
-    new BaseError("BAD_REQUEST", 404, "Page Not Found", false, {
+  const error = new TransfromError(
+    new BaseError("BAD_REQUEST", 404, "Page Not Found", {
       errorView: "errors/404",
       renderData: {
         title: "Page Not Found",
+        url: req.originalUrl,
       },
       responseType: "page",
     })
@@ -48,7 +49,6 @@ function returnError(err, req, res, next) {
       stack,
     });
   }
-
   if (err.name.includes("ERR_AUTH")) {
     req.logout();
     req.flash("flashdata", {

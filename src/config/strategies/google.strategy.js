@@ -1,6 +1,6 @@
 import { Strategy } from "passport-google-oauth20";
 import UserModel from "../../app/models/User.model.js";
-import BaseError from "../../errors/base.error.js";
+import { TransfromError } from "../../utils/base.error.js";
 import { OAUTH_CLIENTID, OAUTH_CLIENT_SECRET } from "../env.config.js";
 
 const GoogleStrategy = new Strategy(
@@ -34,7 +34,7 @@ const GoogleStrategy = new Strategy(
         done(null, createdUser);
       }
     } catch (error) {
-      const err = BaseError.toBaseError(error);
+      const err = new TransfromError(error);
       done(err, profile);
     }
   }

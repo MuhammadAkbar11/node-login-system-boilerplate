@@ -1,6 +1,6 @@
 import { Strategy } from "passport-local";
 import UserModel from "../../app/models/User.model.js";
-import BaseError from "../../errors/base.error.js";
+import BaseError, { TransfromError } from "../../utils/base.error.js";
 
 const LocalStrategy = new Strategy(
   {
