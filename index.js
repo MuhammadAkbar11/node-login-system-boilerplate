@@ -1,9 +1,6 @@
 import chalk from "chalk";
-import * as ENV from "./src/app/config/env.config.js";
-import {
-  isOperationalError,
-  logError,
-} from "./src/app/middleware/errorHandler.js";
+import * as ENV from "./src/config/env.config.js";
+import { isOperationalError, logError } from "./src/middleware/errorHandler.js";
 import AppServer from "./src/app/server.js";
 import Logger from "./src/utils/logger.util.js";
 
