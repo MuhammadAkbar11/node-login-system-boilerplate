@@ -2,15 +2,16 @@ import chalk from "chalk";
 import * as ENV from "./src/config/env.config.js";
 import { isOperationalError, logError } from "./src/middleware/errorHandler.js";
 import AppServer from "./src/app/server.js";
-import Logger from "./src/utils/logger.util.js";
+import Logger, { LoggerInfo } from "./src/utils/logger.util.js";
 
 ENV.init;
 
 const app = AppServer(ENV);
 
 app.listen(ENV.PORT, () => {
-  Logger.info(
-    `[SERVER] server running in ${ENV.MODE} mode on port ${ENV.PORT}`
+  LoggerInfo(
+    "SERVER",
+    `server running in ${ENV.MODE} mode on port ${ENV.PORT}`
   );
 });
 
